@@ -72,15 +72,15 @@ public class projectObject {
         String invoice;
 
         if (amountPaid == projectFee) {
-            invoice = "\nThe customer has no billing to show. Invoice Unavailable";
+            invoice = "\nThe customer has paid the full amount. Invoice Unavailable";
         }else {
-            invoice = "\nInvoice Statement for \t\t" + projectName + "\n";
-            invoice += "\nCustomer Name :\t\t " + projectCustomer.personName;
-            invoice += "\nCustomer Tel Number :\t\t " + projectCustomer.personTelNumber;
-            invoice += "\nCustomer Email Address :\t\t " + projectCustomer.personEmailAddress + "\n";
-            invoice += "\nProject Fee :\t\t R" + projectFee;
-            invoice += "\nAmount Paid to date R:\t\t " + amountPaid;
-            invoice += "\nDifference yet to be paid R:\t\t " + amountOwing;
+            invoice = "\nInvoice Statement for \t" + projectName + "\n";
+            invoice += "\nCustomer Name: \t\t\t\t " + projectCustomer.personName;
+            invoice += "\nCustomer Tel Number: \t\t " + projectCustomer.personTelNumber;
+            invoice += "\nCustomer Email Address: \t " + projectCustomer.personEmailAddress + "\n";
+            invoice += "\nProject Fee: \t\t\t\t R" + projectFee;
+            invoice += "\nAmount Paid to date: \t\t R" + amountPaid;
+            invoice += "\nDifference yet to be paid: \t R" + amountOwing;
         }
         return invoice;
     }

@@ -48,13 +48,13 @@ public class poised {
                             System.out.println("Enter the new day due for the project");
                             int changeDayDue = inputObj.nextInt();
 
-                            Date changeDateDue = new Date(changeYearDue,changeMonthDue,changeDayDue);
+                            Date changeDateDue = new Date(changeYearDue,changeMonthDue -1,changeDayDue);
 
                             //Appending the new date value to its object attribute
                             poisedProjectObject.setDateDue(changeDateDue);
                             System.out.println("\nDate value has been successfully changed");
                             System.out.println("New date due added is " + poisedProjectObject.dateDue);
-                            isLoop = false;
+                            isInnerLoop = false;
 
                         }else if (changeDetails.equals("a")) {
                             System.out.println("Enter the new amount to add to the project");
@@ -64,7 +64,7 @@ public class poised {
                             poisedProjectObject.setAmountPaid(changeAmountPaid);
                             System.out.println("\nAmount paid has been successfully changed");
                             System.out.println("New amount added is " + poisedProjectObject.amountPaid);
-                            isLoop = false;
+                            isInnerLoop = false;
 
                         }else if (changeDetails.equals("u")) {
                             System.out.println("\nEnter the new telephone number and/or the new email address for the contractor");
@@ -77,11 +77,11 @@ public class poised {
                             //Appending the new values to their respective attribute fields
                             poisedProjectObject.projectContractor.setContractorContractDetails(changeTelNumber,changeEmailAddress);
                             System.out.println("The contractor's details have been successfully changed");
-                            System.out.println("New contact details added is/are: " + poisedProjectObject.projectCustomer);
-                            isLoop = false;
+                            System.out.println("New contact details added is/are: \n" + poisedProjectObject.projectContractor);
+                            isInnerLoop = false;
 
                         }else if (changeDetails.equals("0")) {
-                            isLoop = false;
+                            isInnerLoop = false;
 
                         }else {
                             System.out.println("Invalid action. Please enter again");
@@ -95,6 +95,12 @@ public class poised {
             } else if (Objects.equals(userMenuChoice, "3")) {
                 System.out.println("Finalise a Project");
                 finaliseProject(poisedProjectObject);
+                userMenuChoice = poisedMenu();
+
+
+            } else if (Objects.equals(userMenuChoice, "4")) {
+                System.out.println("View a created project");
+                outputProjectMethod(poisedProjectObject);
                 userMenuChoice = poisedMenu();
 
             } else if (Objects.equals(userMenuChoice, "-1")) {
@@ -122,6 +128,7 @@ public class poised {
         System.out.println("1. \tCreate a new project");
         System.out.println("2. \tChange the details about an existing project (Date Due/Fee Paid/Contractor's Contact Details)");
         System.out.println("3. \tFinalise a project");
+        System.out.println("4. \tView a created project");
         System.out.println("-1 \tPress -1 to exit program");
 
         userMenuChoice = menuInput.nextLine();
@@ -175,7 +182,7 @@ public class poised {
         System.out.println("Please enter the day num in the format 'dd':");
         day = inputObj.nextInt();
 
-        deadline = new Date(year,month,day);
+        deadline = new Date(year,month -1,day);
 
         inputObj.nextLine();
         System.out.println("\nType of building:");
@@ -219,8 +226,8 @@ public class poised {
 
         projectObject poisedProjectObject = new projectObject(
                 projNumber, inProjName, inBuilding,projAddress, ERFNumber, totalFee,amountPaid,deadline,poisedCustomer, poisedContractor, poisedArchitect);
-        System.out.println("\nYou have successfully created a new project.\nHere's how it looks: \n ");
-        System.out.println(poisedProjectObject);
+        //Output of project object using a method
+        outputProjectMethod(poisedProjectObject);
 
         System.out.println("\nWould you like to change details of the project? \nEnter 'y' to proceed. Enter any other key to return to the main menu");
         String changeDetails = inputObj.nextLine();
@@ -276,7 +283,7 @@ public class poised {
                     //Appending the new values to their respective attribute fields
                     poisedContractor.setContractorContractDetails(changeTelNumber,changeEmailAddress);
                     System.out.println("The contractor's details have been successfully changed");
-                    System.out.println("New contact details added is/are: " + poisedProjectObject.projectCustomer);
+                    System.out.println("New contact details added is/are: " + poisedProjectObject.projectContractor);
                     isLoop = false;
 
                 }else if (changeDetails.equals("0")) {
@@ -290,6 +297,11 @@ public class poised {
 
         }
         return poisedProjectObject;
+    }
+
+    private static void outputProjectMethod(projectObject poisedProjectObject) {
+        System.out.println("\nYou have successfully created a new project.\nHere's how it looks: \n ");
+        System.out.println(poisedProjectObject);
     }
 
     static customerObject inputCustomerDetails() {
