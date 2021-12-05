@@ -1,0 +1,5 @@
+test1|1|Tadi && 3Stellei && 0112333 && dwdw@mweb.com|ESRGHJG && 0289658564 && 000000998 && fhgdg@hotmain.con|Arch1 && yyigejk && 09898645 && yrdhgc@gmail.com|3Sttellenbosch|house|12|1232.0|112.0|2021-10-09|
+test2|1|Tadi && 3Stellei && 0112333 && dwdw@mweb.com|ESRGHJG && 0289658564 && 000000998 && fhgdg@hotmain.con|Arch1 && yyigejk && 09898645 && yrdhgc@gmail.com|3Sttellenbosch|house|12|1232.0|112.0|2021-10-09|
+test1|1|Tadi && 3Stellei && 0112333 && dwdw@mweb.com|ESRGHJG && 0289658564 && 000000998 && fhgdg@hotmain.con|Arch1 && yyigejk && 09898645 && yrdhgc@gmail.com|3Sttellenbosch|house|12|1232.0|112.0|2021-10-09|
+Tadiwa Test|1|Tadiwa && 5 Maiden Strret && 0979696 && adaa@gmail.com|DSG Contractors && 1 Sandowner Road && 0117764234 && dsg@gmail.com|Seef properties && 1 Seef Way && 0113348017 && contact@seef.com|3 Stellenbosch|House|11223|1277.0|1000.0|3921-10-09|
+Test to Array|12|Tasmania && 67 Acacia Drive && 0751258012 && tasman2@gmail.com|Builders Warehouse && 1 Republic Road && 0116723990 && 1builders@gmail.com|Seef Properties && 20 Chest Road && 0112274228 && info@seef.com|1 Hemming Way|Condo|11245|7220995.0|5499000.0|2021-10-06|
